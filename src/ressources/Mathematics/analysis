@@ -1,0 +1,13 @@
+Analysis is the branch of mathematics dealing with limits and related theories, such as differentiation, integration, measure, sequences, series, and analytic functions.[1][2]
+
+These theories are usually studied in the context of real and complex numbers and functions. Analysis evolved from calculus, which involves the elementary concepts and techniques of analysis. Analysis may be distinguished from geometry; however, it can be applied to any space of mathematical objects that has a definition of nearness (a topological space) or specific distances between objects (a metric space).
+Metric spaces
+In mathematics, a metric space is a set where a notion of distance (called a metric) between elements of the set is defined.
+
+Much of analysis happens in some metric space; the most commonly used are the real line, the complex plane, Euclidean space, other vector spaces, and the integers. Examples of analysis without a metric include measure theory (which describes size rather than distance) and functional analysis (which studies topological vector spaces that need not have any sense of distance).
+
+Formally, a metric space is an ordered pair  where M is a set and d is a metric on M, i.e., a function
+Sequences and limits
+A sequence is an ordered list. Like a set, it contains members (also called elements, or terms). Unlike a set, order matters, and exactly the same elements can appear multiple times at different positions in the sequence. Most precisely, a sequence can be defined as a function whose domain is a countable totally ordered set, such as the natural numbers.
+
+One of the most important properties of a sequence is convergence. Informally, a sequence converges if it has a limit. Continuing informally, a (singly-infinite) sequence has a limit if it approaches some point x, called the limit, as n becomes very large. That is, for an abstract sequence (an) (with n running from 1 to infinity understood) the distance between an and x approaches 0
