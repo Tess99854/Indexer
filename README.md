@@ -24,3 +24,14 @@ Result:
 ```
 [C:\Users\tesnime\IdeaProjects\Indexer\src\ressources\Mathematics\analysis = 3]
 ```
+
+###### First example:
+Using multiple paths:
+``` 
+paths: src/ressources/Mathematics/analysis src/ressources/Mathematics/cryptography
+search word: algorithms 
+```
+Result: 
+```
+[C:\Users\tesnime\IdeaProjects\Indexer\src\ressources\Mathematics\analysis = 3]
+```
