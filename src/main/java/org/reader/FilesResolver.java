@@ -11,7 +11,7 @@ public class FilesResolver implements IReader {
 
     public void open(String filePath) {
         File path = new File(filePath);
-        System.out.println(path);
+
         if (path.isDirectory()) {
             // Get all files from the directory.
             File[] fList = path.listFiles();

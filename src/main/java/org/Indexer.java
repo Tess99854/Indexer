@@ -26,17 +26,14 @@ public class Indexer {
     }
 
     public void generateIndex() throws FileNotFoundException {
-        System.out.println(terms);
         ArrayList<String> words = tokenizer.tokenize(content);
         words = stemmer.stemm(words);
 
 
-        // System.out.println(words);
-
         for (String word : words) {
             if (terms.containsKey(word)) {
-                SortedMap<String, Integer> docs  = terms.get(word);
-                if (docs.containsKey(path)){
+                SortedMap<String, Integer> docs = terms.get(word);
+                if (docs.containsKey(path)) {
                     terms.get(word).put(path, terms.get(word).get(path) + 1);
                 } else {
                     terms.get(word).put(path, 1);
@@ -48,8 +45,6 @@ public class Indexer {
             }
 
         }
-
-        System.out.println(terms);
     }
 
     public static SortedMap getIndex() {
