@@ -25,10 +25,10 @@ public class App {
         String[] paths = sc.nextLine().split(" ");
         ArrayList<File> files = new ArrayList<>();
         for (String path : paths) {
-            files.addAll( resolver.open(path)) ;
+            files.addAll(resolver.open(path));
         }
 
-        for (File file: files) {
+        for (File file : files) {
             try {
                 String docsContent = resolver.read(file);
                 Indexer indexer = new Indexer(docsContent, file.getPath());
@@ -39,10 +39,14 @@ public class App {
             }
         }
 
-        System.out.println(ANSI_PURPLE + "Search for a word: " + ANSI_RESET);
-        String term = sc.nextLine();
+        if (!Indexer.getIndex().isEmpty()) {
+            System.out.println(ANSI_PURPLE + "Search for a word: " + ANSI_RESET);
+            String term = sc.nextLine();
 
-        System.out.println(Indexer.searchIndex(term).entrySet());
+            System.out.println(Indexer.searchIndex(term).entrySet());
+
+        }
+        ;
 
 
     }
