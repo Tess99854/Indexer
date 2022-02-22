@@ -7,9 +7,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class FilesResolver implements IReader {
-    private ArrayList<File> files = new ArrayList<>();
-
-    public void open(String filePath) {
+    public ArrayList<File> open(String filePath) {
+        ArrayList<File> files = new ArrayList<>();
         File path = new File(filePath);
 
         if (path.isDirectory()) {
@@ -26,20 +25,19 @@ public class FilesResolver implements IReader {
         } else {
             files.add(path);
         }
-
+        return files;
     }
 
-    public String read() throws IOException {
+    public String read(File file) throws IOException {
         StringBuilder content = new StringBuilder();
         String line;
 
-        for (File file : files) {
-            BufferedReader reader = new BufferedReader(new FileReader(file));
-            while ((line = reader.readLine()) != null) {
-                content.append(line);
-            }
-            reader.close();
+
+        BufferedReader reader = new BufferedReader(new FileReader(file));
+        while ((line = reader.readLine()) != null) {
+            content.append(line);
         }
+        reader.close();
 
 
         return content.toString();

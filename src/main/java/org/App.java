@@ -2,7 +2,9 @@ package org;
 
 import org.reader.FilesResolver;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
@@ -21,18 +23,20 @@ public class App {
         System.out.println(ANSI_PURPLE + "Specify the indexed files or directories separated by space: " + ANSI_RESET);
 
         String[] paths = sc.nextLine().split(" ");
-
+        ArrayList<File> files = new ArrayList<>();
         for (String path : paths) {
+            files.addAll( resolver.open(path)) ;
+        }
+
+        for (File file: files) {
             try {
-                resolver.open(path);
-                String docsContent = resolver.read();
-                Indexer indexer = new Indexer(docsContent, path);
+                String docsContent = resolver.read(file);
+                Indexer indexer = new Indexer(docsContent, file.getPath());
                 indexer.generateIndex();
 
             } catch (IOException e) {
-                System.out.println(path + " is missing");
+                System.out.println(file.getName() + " is missing");
             }
-
         }
 
         System.out.println(ANSI_PURPLE + "Search for a word: " + ANSI_RESET);
