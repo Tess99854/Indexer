@@ -46,8 +46,5 @@ public class App {
             System.out.println(Indexer.searchIndex(term).entrySet());
 
         }
-        ;
-
-
     }
 }
