@@ -25,7 +25,7 @@ Result:
 [C:\Users\tesnime\IdeaProjects\Indexer\src\ressources\Mathematics\analysis = 3]
 ```
 
-###### First example:
+###### Second example:
 Using multiple paths:
 ``` 
 paths: src/ressources/Mathematics/analysis src/ressources/Mathematics/cryptography
